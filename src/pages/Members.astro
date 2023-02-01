@@ -1,0 +1,71 @@
+---
+import Navbar from "../components/Navbar.astro";
+import foto from "../img/foto.jpg";
+---
+
+<Navbar />
+
+<div class="p-48">
+  <p class="text-5xl text-black font-bold">Nuestros Integrantes</p>
+  <br />
+  <p>
+    En Juventud Mariana Vicentina de Arequipa, estamos agrupados por 2 sedes:
+    JMV Villa Ecologica y JMV Sachaca
+  </p>
+  <br />
+
+  <div class="w-[40rem] h-[22rem] contenedor rounded-xl">
+    <a href="Villa">
+      <img src={foto} alt="fotaso" class="w-[40rem] h-[22rem]" />
+      <div class="w-[40rem] h-[22rem] cap">
+        <div class="info">
+          <p class="text-white text-4xl font-bold">JMV Villa Ecologica</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<style>
+  .contenedor {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  img {
+    transition: all 400ms ease-out;
+    will-change: transform;
+    opacity: 1;
+    position: absolute;
+  }
+
+  .cap {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    background: rgba(23, 24, 24, 0.404);
+    transition: all 400ms ease-out;
+    text-align: center;
+  }
+
+  .contenedor:hover img {
+    transform: scale(1.1);
+  }
+
+  .contenedor:hover .cap {
+    opacity: 1;
+  }
+
+  .info {
+    transition: all 400ms ease-in;
+    margin-top: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contenedor:hover .info {
+    margin-top: 150px;
+  }
+</style>
